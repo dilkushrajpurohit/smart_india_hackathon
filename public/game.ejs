@@ -1,0 +1,101 @@
+<!-- @under the team neuroninjas @dristi @cheta @dileep @ dev   @bhuvan @ dilkush just for demo purpose-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game center</title>
+    
+</head>
+<style>
+     *{
+        padding: 0;
+        margin: 0;
+    }
+    .main_header{
+        width: 100%;
+        height: 70px;
+        background-color: yellow;
+    }
+    .text_heading{
+        font-size: 50px;
+        text-align: center;
+        color: green;
+    }
+    .navbar{
+        width: 100%;
+        height: 40px;
+        background-color: greenyellow;
+    }
+    nav {
+        display: flex;
+        margin-left: 20px;
+    }
+    nav li{
+        margin-left: 190px;
+    
+        list-style-type: none;
+    }
+    .container{
+        height: 120px;
+        width: 60%;
+        border: 2px solid black;
+        position: relative;
+        left: 18%;
+        top: 29px;
+    }
+    .main_game{
+        height: 30%;
+        height: 30%;
+        background-color:yellowgreen;
+    }
+    #gm{
+        display: none;
+    }
+</style>
+<body>
+    <header class="main_header"><div class="text_heading">SMART INDIA HACKATHON</div></header>
+    <div class="navbar">
+        <nav>
+            <li><a href="/home"> Home</a></li>
+            <li><a href="/tracker"> Mood-tracker</a></li>
+            <li><a href="/connect"> Connect </a></li>
+            <li><a href="/consult"> Consult </a></li>
+        </nav>
+    </div>
+    <div class="container" id="cont">
+    <h1>guessing the number</h1>
+    <p>In this system will create a random number and give you 3 chance to guess it if you got right then point increase</p>
+    <button style="width: 100px; height: 30px;background-color: yellowgreen;" onclick="expand()">play now!</button>
+    <div class="main_game" id="gm"><h4>guess the number between 1-10</h4>
+    <input type="text" id="value_input" placeholder="enter value">
+    <button onclick="playgame()">submit</button>
+    <p class="para" id="para"></p>
+    </div>
+    </div>
+<script>
+        let random=Math.floor(Math.random()*10)
+
+    function expand(){
+        let get=document.getElementById('cont').style.height='300px';
+        let gam=document.getElementById("gm").style.display='block';  
+
+    }
+    function playgame(){
+        let value=document.getElementById('value_input').value;
+        if(random==value){
+            document.getElementById('para').innerHTML='you got correct'
+        }
+        if(random>value){
+            document.getElementById('para').innerHTML='you are wrong go up '
+        }
+        if(random<value){
+            document.getElementById('para').innerHTML='you are wrong go down'
+        }
+        
+        
+    }
+
+</script>
+</body>
+</html>

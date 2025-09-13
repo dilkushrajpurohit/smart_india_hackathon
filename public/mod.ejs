@@ -1,0 +1,119 @@
+<!-- @under the team neuroninjas @dristi @cheta @dileep @ dev @ dilkush just for demo purpose-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect to peers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+   
+    .main_header{
+        width: 100%;
+        height: 70px;
+        background-color: yellow;
+    }
+    .text_heading{
+        font-size: 50px;
+        text-align: center;
+        color: green;
+    }
+    .navbar{
+        width: 100%;
+        height: 40px;
+        background-color: greenyellow;
+    }
+    nav {
+        display: flex;
+        margin-left: 20px;
+    }
+    nav li{
+        margin-left: 190px;
+    
+        list-style-type: none;
+    }
+    .main_header{
+        width: 100%;
+        height: 70px;
+        background-color: yellow;
+    }
+    .text_heading{
+        font-size: 50px;
+        text-align: center;
+        color: green;
+    }
+    .flex{
+        display: flex;
+    }
+    .left{
+        width: 40%;
+        height: 485px;
+        background-color: yellowgreen;
+    }
+    .right{
+        width: 60%;
+        height: 485px;
+    }
+   #chats li{
+    background-color: aqua;
+    border-top: 2px solid greenyellow;
+
+   }
+</style>
+
+<body>
+    <header class="main_header"><div class="text_heading">SMART INDIA HACKATHON</div></header>
+    <div class="navbar">
+        <nav>
+            <li><a href="/home"> Home</a></li>
+            <li><a href="/tracker"> Mood-tracker</a></li>
+            <li><a href="/connect"> Connect </a></li>
+            <li><a href="/consult"> Consult </a></li>
+        </nav>
+    </div>
+    <div class="flex">
+    <div class="left" id="lf"> 
+
+    </div>
+    <div class="right">
+        <div class="chats" id="chats"></div>
+        <div style="display: flex; margin-top: 53%; position: sticky;" >
+            
+            <div class="input-group mb-3">
+                
+                <input type="enter here!" class="form-control" placeholder="Enter query here" aria-label="Username" aria-describedby="basic-addon1" name="user" id="maininput">
+              </div>
+              <button  class="btn btn-primary" onclick="send()">Enter</button>
+        </div>
+    </div>
+    </div>
+<script>
+    const socket=io('http://localhost:3000/')
+    socket.on('connection')
+    function send(){
+        let humaresawal=document.getElementById('maininput').value;
+        socket.emit('bhaikijubani',humaresawal)
+        
+    }
+    socket.on('usercon',(data)=>{
+            let doc=document.createElement('li')
+            document.getElementById('lf').appendChild(doc)
+            doc.innerHTML=data+" is connected "
+
+    })
+    socket.on('bhaikijubani',(data)=>{
+           let put=document.createElement("li")
+           document.getElementById('chats').appendChild(put)
+           put.innerHTML=data.name +':' + data.dt
+
+    })
+    
+</script>
+</body>
+</html>

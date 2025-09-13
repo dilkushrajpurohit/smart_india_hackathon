@@ -1,0 +1,74 @@
+<!-- @under the team neuroninjas @dristi @cheta @dileep @ dev @ dilkush just for demo purpose-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hey welcome to base page </title> 
+    
+  <!-- note style body ka part hai lekin bahar laga sakte hai baki baccha body au head isliya link head mai aayega-->  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .main_header{
+        width: 100%;
+        height: 70px;
+        background-color: yellow;
+    }
+    .text_heading{
+        font-size: 50px;
+        text-align: center;
+        color: green;
+    }
+    .container_login{
+        width: 70%;
+        height: 450px;
+        border: 2px solid red;
+        position: relative;
+        left: 14%;
+        top: 2%;
+    }
+    .heading{
+        width: 100%;
+        height: 40px;
+        background-color: yellowgreen;
+        text-align: center;
+        font-size: 28px;
+       
+    }
+    .inpu{
+        width: 50%;
+        position: relative;
+        left: 25%;
+        top: 100px;
+    }
+</style>
+<body>
+    <header class="main_header"><div class="text_heading">SMART INDIA HACKATHON</div></header>
+    <div class="main_login">
+        <div class="container_login">
+            <div class="heading">Register now!</div>
+            <div class="inpu">
+                <form action="/login" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="user">
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                    
+                    <input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1" name="password">
+                  </div>
+                  <input type="submit" class="btn btn-danger">
+                  </form>
+            </div>
+        </div>
+    </div>
+    <footer class="main_footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
