@@ -52,7 +52,7 @@ try {
 }
 })
 mongoose.connect('mongodb+srv://divyanshuraj43435_db_user:9FvDgGOUROCOGdoh@smartindia.6uydl5q.mongodb.net/?retryWrites=true&w=majority&appName=smartindia').then(()=>console.log("connected to database")) // connection string hai onine nikala hai 
-server.listen(3000,()=>{
+server.listen(process.env.PORT ||  3000,()=>{
     console.log("brotehr running in port 3000")
 })// it also give callback 
 app.get("/consult",(req,res)=>{
